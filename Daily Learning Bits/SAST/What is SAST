@@ -124,3 +124,35 @@ Source: Conversation with Bing, 4/3/2024
 (5) SAST testing: how it works and why do you need it? | Snyk. https://snyk.io/learn/application-security/static-application-security-testing/.
 (6) Static Application Security Testing (SAST) | Learn AppSec - Invicti. https://www.invicti.com/learn/static-application-security-testing-sast/.
 
+
+
+
+---------------
+How can I mitigate the limitations of SAST scans?
+
+
+
+
+Mitigating the limitations of Static Application Security Testing (SAST) scans involves a combination of best practices and complementary security measures. Here are some strategies:
+
+1. **Combine with Other Testing Types**: Use SAST in conjunction with other testing methods like Dynamic Application Security Testing (DAST), Interactive Application Security Testing (IAST), and manual code reviews to cover more types of vulnerabilities¹².
+
+2. **Regularly Update and Configure Tools**: Keep your SAST tools updated with the latest vulnerability databases and configure them to match your specific coding environment and requirements¹.
+
+3. **Educate Developers**: Train developers on secure coding practices and the importance of security to reduce the number of vulnerabilities introduced into the code¹.
+
+4. **Tune the SAST Tool**: Adjust the SAST tool's settings to reduce false positives and negatives, such as customizing rules and severity levels based on the context of your application¹².
+
+5. **Review and Refine Results**: Regularly review the results of SAST scans, refine the rules, and adjust the tool's configuration to improve accuracy over time¹.
+
+6. **Integrate into the Development Process**: Embed SAST scans into the early stages of the development process, such as during code commits or build processes, to catch issues early¹.
+
+7. **Use IDE Plugins**: Some SAST tools offer IDE plugins that provide real-time feedback to developers as they write code, helping to prevent security issues from entering the codebase¹.
+
+By implementing these measures, you can enhance the effectiveness of SAST scans and better secure your applications against potential threats.
+
+Source: Conversation with Bing, 4/4/2024
+(1) SAST testing: how it works and why do you need it? | Snyk. https://snyk.io/learn/application-security/static-application-security-testing/.
+(2) SAST Scanning Pros & Cons | Traceable App & API Security. https://www.traceable.ai/blog-post/does-sast-deliver-the-challenges-of-code-scanning.
+(3) What is Software Application Security Testing (SAST)?. https://www.sonatype.com/launchpad/what-is-sast.
+
