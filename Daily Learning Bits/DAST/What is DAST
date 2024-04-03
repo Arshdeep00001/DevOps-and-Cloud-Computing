@@ -1,0 +1,97 @@
+what is dast?
+
+
+Dynamic Application Security Testing (DAST) is a testing process that analyzes a web application from the front-end to find vulnerabilities through simulated attacks. It's an "outside-in" approach, where the application is tested as if by a malicious user¹. DAST tools perform these attacks and look for unexpected results to identify security vulnerabilities. They are particularly useful because they do not require access to the source code and can find issues during the running state of an application².
+
+Source: Conversation with Bing, 4/3/2024
+(1) What is Dynamic Application Security Testing (DAST) | OpenText. https://www.opentext.com/what-is/dast.
+(2) SAST vs. DAST: What’s the Difference? | Synopsys Blog. https://www.synopsys.com/blogs/software-security/sast-vs-dast-difference.html.
+(3) Dynamic application security testing - Wikipedia. https://en.wikipedia.org/wiki/Dynamic_Application_Security_Testing.
+(4) What is Dynamic Application Security Testing (DAST)?. https://www.sonatype.com/launchpad/what-is-dast.
+
+
+
+-----------------
+Can you explain how a typical DAST scan works?
+
+
+
+Certainly! A typical Dynamic Application Security Testing (DAST) scan follows these steps:
+
+1. **Crawling**: The DAST tool starts by crawling the web application to map out the structure and discover all accessible URLs³.
+
+2. **Scanning**: It then scans these URLs to identify potential points of entry for attacks¹.
+
+3. **Attack Simulation**: The tool simulates various external attack vectors, such as SQL injections, Cross-Site Scripting (XSS), and others, against the application's exposed interfaces².
+
+4. **Analysis**: As the application responds to these simulated attacks, the DAST tool analyzes the behavior and reactions to identify security vulnerabilities¹.
+
+5. **Reporting**: Finally, it generates a report detailing the vulnerabilities found, which allows developers to understand and remediate the issues¹.
+
+DAST scans can be performed both automatically and manually, with automated scans using bots to crawl and detect vulnerabilities, and manual scans allowing for more complex attack simulations¹. This process helps in identifying security weaknesses from an outsider's perspective, ensuring the application is robust against potential threats.
+
+Source: Conversation with Bing, 4/3/2024
+(1) What is DAST (Dynamic Application Security Testing)?. https://www.clouddefense.ai/what-is-dast/.
+(2) DAST - The Complete know-how and Best Practices for ... - AppSealing. https://www.appsealing.com/dast-dynamic-application-security-testing/.
+(3) What is Dynamic Application Security Testing (DAST) | OpenText. https://www.opentext.com/what-is/dast.
+(4) DAST 101: The What, Why, and How of Dynamic Application Security .... https://community.microfocus.com/cyberres/b/cybersecurity-blog/posts/dast-101-the-what-why-and-how-of-dynamic-application-security-testing.
+
+
+
+-------------------
+What are some limitations of DAST scans?
+
+
+Dynamic Application Security Testing (DAST) is a valuable tool for identifying security vulnerabilities in web applications. However, it does have some limitations:
+
+- **Limited Visibility**: DAST only tests the exposed interfaces of an application, which means it can miss vulnerabilities that are not visible from the outside¹.
+- **Late Discovery**: Vulnerabilities are often found late in the development cycle, which can increase the cost and complexity of fixing them².
+- **False Positives/Negatives**: DAST can sometimes generate incorrect alerts (false positives) or fail to detect some vulnerabilities (false negatives)².
+- **Scope of Vulnerabilities**: It is limited to detecting specific types of vulnerabilities and may not identify deeper, internal issues¹.
+- **Performance Impact**: Running DAST scans can slow down the application, especially if it's in a live environment².
+- **Source Code Insight**: DAST does not provide specific insights into the source code or the exact cause of vulnerabilities².
+- **Dynamic Behavior Dependency**: The effectiveness of DAST is dependent on the application’s dynamic behavior, which can vary¹.
+
+These limitations suggest that while DAST is a powerful tool for security testing, it should be used in conjunction with other methods, such as Static Application Security Testing (SAST), to ensure a more comprehensive approach to application security.
+
+Source: Conversation with Bing, 4/3/2024
+(1) Dynamic Application Security Testing: DAST Pros and Cons. https://www.parasoft.com/blog/dynamic-application-security-testing-dast-pros-and-cons/.
+(2) DAST: 7 Use Cases with Real-Life Examples, Pros & Cons in '24 - AIMultiple. https://research.aimultiple.com/dast/.
+(3) DAST: 7 Use Cases with Real-Life Examples, Pros & Cons in '24 - AIMultiple. https://bing.com/search?q=limitations+of+DAST+scans.
+(4) Analyzing DAST Methods: Quick and Shallow vs In-Depth Scans. https://brightsec.com/blog/analyzing-dast-methods-quick-and-shallow-vs-in-depth-scans/.
+(5) Dynamic Application Security Testing: Benefits, Pitfalls, and Top Open .... https://blog.gitguardian.com/dynamic-application-security-testing-benefits-pitfalls-and-top-open-source-solutions/.
+(6) Dynamic application security testing - Wikipedia. https://en.wikipedia.org/wiki/Dynamic_Application_Security_Testing.
+
+
+
+------------------
+How can I mitigate the limitations of DAST scans?
+
+
+To mitigate the limitations of Dynamic Application Security Testing (DAST) scans, you can consider the following strategies:
+
+1. **Combine with SAST**: Integrate DAST with Static Application Security Testing (SAST) for a more comprehensive security assessment. SAST can identify issues in the source code that DAST might miss¹.
+
+2. **Early Integration**: Incorporate DAST earlier in the development cycle, possibly during the Continuous Integration/Continuous Deployment (CI/CD) process, to detect vulnerabilities sooner².
+
+3. **Expert Involvement**: Engage security experts to create effective test cases and interpret DAST results accurately, reducing false positives and negatives¹.
+
+4. **Supplement with Manual Testing**: Use manual penetration testing to complement DAST and uncover vulnerabilities that automated tools may not detect².
+
+5. **Regular Scans**: Schedule regular DAST scans to continuously monitor the application for new vulnerabilities as they arise².
+
+6. **Non-Production Environment**: Run DAST scans in a production-like but non-production environment to prevent potential data overwriting or other issues⁵.
+
+7. **Educate Development Teams**: Train developers on security best practices to reduce the number of vulnerabilities introduced during coding¹.
+
+8. **Use Advanced Tools**: Employ sophisticated DAST tools capable of performing complex scans and detecting a wide range of flaws¹.
+
+By implementing these measures, you can enhance the effectiveness of DAST scans and ensure a more secure application. Remember, no single tool or method can provide complete security, so a layered approach is always recommended.
+
+Source: Conversation with Bing, 4/3/2024
+(1) Dynamic Application Security Testing: DAST Pros and Cons. https://www.parasoft.com/blog/dynamic-application-security-testing-dast-pros-and-cons/.
+(2) DAST: 7 Use Cases with Real-Life Examples, Pros & Cons in '24 - AIMultiple. https://research.aimultiple.com/dast/.
+(3) Dynamic application security testing - Wikipedia. https://en.wikipedia.org/wiki/Dynamic_Application_Security_Testing.
+(4) Learn about DAST in 5 Minutes (Or Less) | GuardRails. https://www.guardrails.io/blog/dast-in-5-minutes-or-less-what-you-need-to-know/.
+(5) DAST - The Complete know-how and Best Practices for ... - AppSealing. https://www.appsealing.com/dast-dynamic-application-security-testing/.
+
