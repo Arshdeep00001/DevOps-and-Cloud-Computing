@@ -1,0 +1,33 @@
+what is def in groovy script
+
+
+In Groovy, `def` is a keyword used to define a variable with no specific type. It's an example of Groovy's dynamic typing capability, allowing a variable to hold any type of object. When you declare a variable with `def`, Groovy determines the actual type at runtime based on the assigned value.
+
+Here's an example:
+
+```groovy
+def message = "Hello, World!"
+println(message)
+```
+
+In this case, `message` is inferred to be a `String` because it's assigned a string literal. However, if later in the script you assign a different type of object to `message`, Groovy will accept that too, because `def` essentially means "the type will be determined at runtime."
+
+You can also use `def` for method return types, which allows the method to return different types of objects:
+
+```groovy
+def add(a, b) {
+    return a + b
+}
+```
+
+The `add` method can return an `Integer`, `Double`, `String`, etc., depending on the types of the arguments passed to it. This flexibility is one of the features that makes Groovy a dynamic language.
+
+Source: Conversation with Bing, 10/04/2024
+(1) undefined. https://stackoverflow.com/questions/12472645/how-do-i-schedule-jobs-in-jenkins.
+(2) undefined. https://www.jenkins.io/doc/book/pipeline/syntax/.
+(3) undefined. https://blogs.perficient.com/2022/08/23/configuring-jenkins-jobs-by-using-cron/.
+(4) undefined. https://www.shellhacks.com/jenkins-schedule-build-periodically-parameters/.
+(5) Groovy def Keyword | Baeldung. https://www.baeldung.com/groovy-def-keyword.
+(6) Groovy: what's the purpose of "def" in "def x = 0"?. https://stackoverflow.com/questions/184002/groovy-whats-the-purpose-of-def-in-def-x-0.
+(7) Groovy functions - Code Maven. https://code-maven.com/groovy-functions.
+(8) function - What is 'def' in Groovy stands for - Stack Overflow. https://stackoverflow.com/questions/64847242/what-is-def-in-groovy-stands-for.
