@@ -1,0 +1,25 @@
+tr  -d -c 0-9 command in linux
+
+
+The `tr -d -c 0-9` command in Linux is used to delete all characters from the input except for digits (0-9). Here's a breakdown of the command:
+
+- `tr`: The translate or delete utility.
+- `-d`: Delete characters that are specified in the first set.
+- `-c`: Complement the set of values provided. This means it will consider all characters that are **not** in the set.
+- `0-9`: The range of characters to keep, which in this case is all digits.
+
+So, when you run `tr -d -c 0-9`, it will remove all characters that are not digits from the standard input and write the result to the standard output³.
+
+Here's an example of how it works:
+
+```bash
+echo 'Hello 123 World 456' | tr -d -c '0-9'
+```
+
+This command will output `123456`, stripping away all non-digit characters from the given string.
+
+Source: Conversation with Bing, 4/10/2024
+(1) TR Command in Linux: A Guide with Practical Examples. https://tecadmin.net/tr-command-in-linux/.
+(2) Tr Command in Linux with Examples | Linuxize. https://linuxize.com/post/linux-tr-command/.
+(3) tr command in Unix/Linux with examples - GeeksforGeeks. https://www.geeksforgeeks.org/tr-command-in-unix-linux-with-examples/.
+(4) tr Command in Linux: 6 Useful Examples - Linux Handbook. https://linuxhandbook.com/tr-command/.
