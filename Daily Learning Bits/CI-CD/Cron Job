@@ -1,0 +1,29 @@
+what is a cron job in Jenkins?
+
+
+A cron job in Jenkins is a way to schedule jobs to run at specific times or intervals. It uses a cron expression, which is a string of five fields representing time and date patterns, to define the schedule. Here's a quick breakdown of the cron syntax used in Jenkins:
+
+- **MINUTES**: Minutes within an hour (0-59)
+- **HOURS**: Hours within a day (0-23)
+- **DAY OF MONTH**: Day within a month (1-31)
+- **MONTH**: Month within a year (1-12)
+- **DAY OF WEEK**: Day within a week (0-7, where both 0 and 7 represent Sunday)
+
+For example, a cron expression `0 8 * * *` would schedule the job to run daily at 8:00 AM.
+
+Jenkins also introduces a special symbol `H`, which represents a hash function of the job name, ensuring that jobs don't all run at the same time if they have the same schedule¹. This helps in spreading out the load on the system.
+
+To set up a cron job in Jenkins:
+1. Go to the job configuration page.
+2. Scroll down to the **Build Triggers** section.
+3. Check the **Build Periodically** box.
+4. Enter the cron expression in the **Schedule** field.
+
+Remember, the cron syntax in Jenkins is similar to that in Unix/Linux but with some minor differences, so always refer to the Jenkins documentation for the correct configuration².
+
+Source: Conversation with Bing, 10/04/2024
+(1) cron - How do I schedule jobs in Jenkins? - Stack Overflow. https://stackoverflow.com/questions/12472645/how-do-i-schedule-jobs-in-jenkins.
+(2) Pipeline Syntax - Jenkins. https://www.jenkins.io/doc/book/pipeline/syntax/.
+(3) Configuring Jenkins Jobs by Using CRON - Perficient Blogs. https://blogs.perficient.com/2022/08/23/configuring-jenkins-jobs-by-using-cron/.
+(4) Jenkins: Schedule - Build Periodically - Parameters - ShellHacks. https://www.shellhacks.com/jenkins-schedule-build-periodically-parameters/.
+
