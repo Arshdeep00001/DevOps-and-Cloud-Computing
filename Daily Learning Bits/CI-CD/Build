@@ -1,0 +1,16 @@
+what is a build
+
+
+In software development, a **build** refers to the process of converting source code files into standalone software artifacts that can be run on a computer, or the result of doing so¹. This process typically includes:
+- **Version control**: Managing changes to the source code, ensuring repeatability and reliability of the build¹.
+- **Code quality**: Ensuring the source code adheres to standards for maintainability, extensibility, and readability¹.
+- **Compilation**: Transforming source code into executable or intermediate objects¹.
+- **Linking**: Combining object files and libraries into a single executable file or another 'object' file¹.
+
+Build tools like **Make**, **Gradle**, **Maven**, and others automate these processes to streamline the creation of the final software product¹. Builds can be **full** (building from scratch) or **incremental** (using the last build state and only rebuilding modified components)².
+
+Source: Conversation with Bing, 2/13/2024
+(1) Software build - Wikipedia. https://en.wikipedia.org/wiki/Software_build.
+(2) What is the software build- All you need to know! - Medium. https://medium.com/webgentle/what-is-the-software-build-all-you-need-to-know-4046b0e674bb.
+(3) Build Definition - TechTerms.com. https://techterms.com/definition/build.
+(4) Build - DevX Tech Glossary. https://www.devx.com/terms/build/.
