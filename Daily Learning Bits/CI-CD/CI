@@ -23,3 +23,41 @@ Source: Conversation with Bing, 4/13/2024
 (5) en.wikipedia.org. https://en.wikipedia.org/wiki/Continuous_integration.
 
 
+
+---------------------------
+
+Continuous Integration (CI) is a software development practice where developers frequently merge their code changes into a shared repository, usually several times a day³. This process is a key part of DevOps, which emphasizes collaboration and automation in the software development process¹.
+
+Here's a brief overview of how CI works:
+- **Developers commit changes** to the code repository.
+- The CI system **automatically builds** and tests the new code, often with every change.
+- This helps to **identify integration issues early**, making them easier to fix.
+- It also **reduces the risk** of major problems during the final merge before a release².
+
+The benefits of CI include:
+- **Improved code quality**: Frequent integration can reveal issues early, leading to better overall code quality.
+- **Reduced manual tasks**: Automation in CI reduces the need for manual intervention, saving time and effort.
+- **Faster release cycles**: With automated testing and building, new features and fixes can be deployed more quickly¹.
+
+Some popular CI tools are:
+- **Jenkins**
+- **CircleCI**
+- **GitHub Actions**
+- **Azure Pipelines**
+- **GitLab CI/CD**
+- **Bitbucket Pipelines**
+
+These tools help manage source code, versioning, build, test, and release processes, making it easier for teams to collaborate and maintain high standards of software quality¹..
+
+Source: Conversation with Bing, 4/13/2024
+(1) Continuous integration - Wikipedia. https://en.wikipedia.org/wiki/Continuous_integration.
+(2) What is Continuous Integration? - GeeksforGeeks. https://www.geeksforgeeks.org/what-is-continuous-integration/.
+(3) What is Continuous Integration? | IBM. https://www.ibm.com/topics/continuous-integration.
+(4) What is Continuous Integration | Atlassian. https://www.atlassian.com/continuous-delivery/continuous-integration.
+(5) en.wikipedia.org. https://en.wikipedia.org/wiki/Continuous_integration.
+
+
+
+
+
+
