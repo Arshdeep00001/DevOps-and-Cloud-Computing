@@ -14,3 +14,31 @@ Source: Conversation with Bing, 2/13/2024
 (2) What is the software build- All you need to know! - Medium. https://medium.com/webgentle/what-is-the-software-build-all-you-need-to-know-4046b0e674bb.
 (3) Build Definition - TechTerms.com. https://techterms.com/definition/build.
 (4) Build - DevX Tech Glossary. https://www.devx.com/terms/build/.
+
+
+
+------------------------
+
+What is the difference between a build and a release?
+
+
+The difference between a **build** and a **release** in software development is primarily about the stage of the software lifecycle they represent and their intended audience.
+
+- **Build**:
+  A build is a version of the software that is compiled from source code and is ready for testing or deployment. It's an internal milestone primarily used for testing and development purposes. Builds occur prior to release and are generated more frequently. They may have already undergone some testing or might be yet to be tested¹.
+
+- **Release**:
+  A release, on the other hand, is the distribution of the final version of an application to the end-users or customers. It comes after the build has been thoroughly tested and certified by the testing team. A release is based on one or more builds and signifies that the software no longer requires testing and is ready for production use¹.
+
+In essence, a build is an iteration in the development process, while a release is the final product that is delivered to the customer after all testing and quality assurance processes have been completed.
+
+Source: Conversation with Bing, 4/13/2024
+(1) What is the Difference Between Build and Release in Software Testing .... https://pediaa.com/what-is-the-difference-between-build-and-release-in-software-testing/.
+(2) What is Build and Release Management - GeeksforGeeks. https://www.geeksforgeeks.org/what-is-build-and-release-management/.
+(3) What is the difference between build and release?. https://www.jetbrains.com/teamcity/ci-cd-guide/faq/build-and-release/.
+(4) Unraveling the Mystery: Build vs Release in Software Quality Assurance .... https://earnqa.com/fundamentals-of-sqa/what-is-the-difference-between-build-and-release-in-software-quality-assurance-and-test-automation/.
+
+
+
+-----------------------------
+
