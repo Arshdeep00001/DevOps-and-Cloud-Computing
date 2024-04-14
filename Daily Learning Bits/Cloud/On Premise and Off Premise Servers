@@ -1,0 +1,27 @@
+diff between off prem vs on prem servers?
+
+
+The difference between off-premises (often referred to as "off-prem" or "cloud-based") and on-premises servers is primarily about the location and management of the servers and data.
+
+**On-Premises Servers:**
+- **Location**: On-prem servers are located physically within a company's premises.
+- **Control**: The company has full control over the servers, including the hardware and software.
+- **Management**: All aspects of server management, including maintenance, updates, and security, are handled in-house by the company's IT staff.
+- **Cost**: There may be higher upfront costs due to purchasing and maintaining the hardware and infrastructure.
+- **Scalability**: Scaling can be more challenging and costly, as it requires additional physical resources.
+
+**Off-Premises Servers:**
+- **Location**: Off-prem servers are hosted remotely, typically by a cloud service provider.
+- **Control**: The company has less direct control over the hardware but can fully manage their applications and data.
+- **Management**: The service provider is responsible for the physical servers, including maintenance, power, and cooling.
+- **Cost**: Generally, there's a subscription-based model which can be more cost-effective, with lower initial investment.
+- **Scalability**: Easier and quicker to scale resources up or down based on demand, often with just a few clicks.
+
+In summary, on-premises servers offer more control and may be preferred for sensitive data or specific regulatory requirements, while off-premises servers provide flexibility, scalability, and potential cost savings¹².
+
+Source: Conversation with Bing, 4/3/2024
+(1) On Premises VS On Cloud - GeeksforGeeks. https://www.geeksforgeeks.org/on-premises-vs-on-cloud/.
+(2) On-Premises versus Off-Premises | Pure Storage. https://www.purestorage.com/knowledge/on-premises-vs-off-premises.html.
+(3) On-Premise vs Off-Premise: What's Right for Your Restaurant?. https://pos.chowbus.com/blog/article/on-premise-vs-off-premise.
+(4) Top Differences of On-premise vs Off-Premise - EDUCBA. https://www.educba.com/on-premise-vs-off-premise/.
+(5) On Premise vs Off Premise. What are the Benefits and Limitations .... https://www.chubbydeveloper.com/on-premise-vs-off-premise/.
