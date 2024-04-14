@@ -1,0 +1,26 @@
+what is ssh connectivity
+
+
+SSH, or Secure Shell, is a protocol used to securely connect to a remote server, typically over an unsecured network. It allows you to log into another computer over a network, execute commands in a remote machine, and move files from one machine to another. It provides strong authentication and secure communications over insecure channels. 
+
+Here's a quick rundown of how SSH works:
+- **SSH Client**: This is the software on your side that you use to start the connection.
+- **SSH Server**: The software on the server's side that responds to the connection requests.
+- **Encryption**: All data sent over an SSH session is encrypted to prevent eavesdropping and connection hijacking.
+- **Authentication**: Users authenticate themselves to the SSH server using passwords or cryptographic keys.
+- **Commands Execution**: Once connected, you can execute commands on the server as if you were physically present.
+
+To connect to a remote server via SSH, you would typically use the `ssh` command followed by the username and the host you want to connect to, like so:
+
+```bash
+ssh username@hostname
+```
+
+For a more detailed guide on using SSH, including setting up key-based authentication for added security, you might find the tutorial from DigitalOcean very helpful¹. Additionally, Cloudflare provides a good explanation of the SSH protocol and its features³.
+
+Source: Conversation with Bing, 4/3/2024
+(1) How To Use SSH to Connect to a Remote Server | DigitalOcean. https://www.digitalocean.com/community/tutorials/how-to-use-ssh-to-connect-to-a-remote-server.
+(2) What is SSH? | Secure Shell (SSH) protocol | Cloudflare. https://www.cloudflare.com/learning/access-management/what-is-ssh/.
+(3) How do I use SSH to connect to a remote server in Linux | ssh Command .... https://www.geeksforgeeks.org/ssh-command-in-linux-with-examples/.
+(4) How to Use PuTTY SSH Client on Windows, Mac and Linux - Hostinger. https://www.hostinger.com/tutorials/how-to-use-putty-ssh.
+(5) How Does SSH Work? {Detailed Overview} | pNAP KB - phoenixNAP. https://phoenixnap.com/kb/how-does-ssh-work.
