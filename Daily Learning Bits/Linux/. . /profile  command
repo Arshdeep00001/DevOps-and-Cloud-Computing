@@ -1,4 +1,4 @@
-. . /profile  command
+profile  command
 
 
 The `.. /profile` command is used to access the profile file of the current user in Linux. The profile file is a script that runs when the shell starts and can be used to customize the environment. For example, you can add aliases, functions, variables, modules, drives, commands, and preference settings to your profile file¹².
