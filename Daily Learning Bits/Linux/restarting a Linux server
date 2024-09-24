@@ -1,0 +1,17 @@
+restart a Linux server :
+
+
+There are different ways to restart a Linux server from the command line. Here are some of the most common ones:
+
+- `reboot` or `systemctl reboot`: This command starts a graceful shutdown, letting processes exit, temporary files are removed, and other system clean up tasks. You may need sudo privileges to run this command. For example: `sudo reboot`
+- `shutdown -r`: This command instructs the system to restart by specifying the `-r` option. You can also specify the time when you want the system to be rebooted. For example: `sudo shutdown -r now` or `sudo shutdown -r 10:00`
+- `init 6`: This command tells the system to switch to runlevel 6, which is the reboot state. This is an older method and may not work on some modern Linux distributions. For example: `sudo init 6`
+
+You can learn more about these commands and their options by reading their manual pages. For example: `man reboot` or `man shutdown`¹²³⁴.
+
+Source:
+(1) Linux Reboot (Restart) Command | Linuxize. https://linuxize.com/post/reboot-linux-using-command-line/.
+(2) How to Restart/Reboot Linux Server | phoenixNAP KB. https://phoenixnap.com/kb/restart-linux-using-command-prompt.
+(3) Restart a Linux Server from the Command Line - Linode. https://www.linode.com/docs/guides/restart-linux-server-from-the-command-line/.
+(4) Reboot Linux System Command - nixCraft. https://www.cyberciti.biz/faq/howto-reboot-linux/.
+(5) en.wikipedia.org. https://en.wikipedia.org/wiki/Linux.
