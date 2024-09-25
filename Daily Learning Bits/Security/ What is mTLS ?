@@ -1,0 +1,22 @@
+What is mTLS ?
+
+
+Mutual Transport Layer Security (mTLS) is a security protocol that extends the functionality of traditional Transport Layer Security (TLS). While TLS ensures secure communication between a server and a client, mTLS adds an extra layer of protection by requiring both parties to authenticate each other.
+
+How it works:
+ * Certificate Exchange: Both the client and server present their digital certificates, which contain cryptographic keys.
+ * Verification: Each party verifies the authenticity of the other's certificate using public key cryptography.
+ * Encrypted Communication: Once verified, a secure channel is established between the client and server, allowing them to communicate securely.
+
+Benefits of mTLS:
+ * Enhanced Security: Prevents man-in-the-middle attacks and unauthorized access.
+ * Mutual Authentication: Ensures that both parties are who they claim to be.
+ * Increased Trust: Builds trust between the client and server.
+ * Data Privacy: Protects sensitive data transmitted between the parties.
+
+Common Use Cases:
+ * Microservices: Securing communication between microservices within a distributed application.
+ * API Gateways: Protecting APIs from unauthorized access.
+ * IoT Devices: Securing communication between IoT devices and a central server.
+ * Financial Services: Protecting sensitive financial data.
+In essence, mTLS is a powerful tool for ensuring secure and reliable communication between two parties, making it a valuable asset in modern security architectures.
