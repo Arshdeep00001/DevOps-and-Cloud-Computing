@@ -1,0 +1,20 @@
+sonarqube basics
+
+
+SonarQube is a tool that helps you improve the quality and security of your code by analyzing it for potential bugs, vulnerabilities, code smells, and technical debt. It also provides a web dashboard where you can view and manage the results of your analysis.
+
+Some of the basic concepts of SonarQube are:
+
+- **Project**: A project is a set of source files that are analyzed together by SonarQube. A project can be a single application, a module, a library, or a group of related applications.
+- **Scanner**: A scanner is a tool that performs the analysis of your source code and sends the results to SonarQube. There are different scanners for different languages and build tools, such as SonarScanner for Gradle, SonarScanner for .NET, SonarScanner for Maven, etc.
+- **Quality Profile**: A quality profile is a set of rules that define the coding standards and best practices for your project. SonarQube provides default quality profiles for each language, but you can also create your own or customize the existing ones.
+- **Quality Gate**: A quality gate is a set of conditions that determine whether your project meets the quality and security requirements. For example, you can define a quality gate that fails if the code coverage is below 80% or if there are critical vulnerabilities. You can use quality gates to enforce your quality policy and prevent the release of low-quality software.
+- **Issue**: An issue is a problem detected by SonarQube in your code, such as a bug, a vulnerability, a code smell, or a technical debt. Each issue has a severity, a type, a status, and a resolution. You can view, comment, assign, and resolve issues in the SonarQube dashboard or in your IDE with SonarLint.
+- **Metric**: A metric is a numerical value that measures some aspect of your code quality or security, such as lines of code, code coverage, complexity, duplications, etc. SonarQube collects and displays various metrics for your project, and you can use them to track your progress and identify areas for improvement.
+
+If you want to learn more about SonarQube basics, you can check out the [official documentation](^3^) or the [tutorial](^2^) that I mentioned earlier. 😊
+
+Source:
+(1) SonarQube 10.4. https://docs.sonarsource.com/sonarqube/latest/.
+(2) SonarQube Tutorial All Details with Examples! - Software Test Academy. https://www.swtestacademy.com/sonarqube-tutorial/.
+(3) What is SonarQube and How it works? An Overview and Its Use Cases. https://www.devopsschool.com/blog/what-is-sonarqube-and-how-it-works-an-overview-and-its-use-cases/.
