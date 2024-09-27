@@ -1,0 +1,18 @@
+echo $PATH command
+
+
+
+The `echo $PATH` command is used to display the value of the **PATH** environment variable in a shell¹². The PATH variable contains a list of directories that the shell searches for executable files when you type a command³⁴. For example, if your PATH variable contains `/usr/bin`, then the shell will look for the `ls` command in `/usr/bin/ls`.
+
+The `$` sign is used to indicate that PATH is a variable and not a literal string. The `\` sign is used to escape the next character, which means it prevents the shell from interpreting it as a special character. For example, `\$PATH` will print `$PATH` as a literal string, and not the value of the variable².
+
+You can view your current PATH variable by typing `echo $PATH` in your terminal. You can also modify your PATH variable by using the `export` or `set` commands, but be careful not to overwrite or delete any existing directories that are essential for your system⁴..
+
+Source:
+(1) How this windows command works: echo %path:;=&echo.%. https://superuser.com/questions/1369142/how-this-windows-command-works-echo-path-echo.
+(2) shell - What does echo PATH $PATH \$PATH do? - Stack Overflow. https://stackoverflow.com/questions/22693566/what-does-echo-path-path-path-do.
+(3) command line - What does $PATH mean? - Ask Ubuntu. https://askubuntu.com/questions/551990/what-does-path-mean.
+(4) How To View and Update the Linux PATH Environment Variable. https://www.digitalocean.com/community/tutorials/how-to-view-and-update-the-linux-path-environment-variable.
+(5) en.wikipedia.org. https://en.wikipedia.org/wiki/Echo_(command).
+
+
