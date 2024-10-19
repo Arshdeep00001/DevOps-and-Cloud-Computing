@@ -1,4 +1,4 @@
-Git Commands & Interview Q&As
+**Git Commands & Interview Q&As**
 
 git init         //to create or initialize a local git repository
 .git is componenet to which Git will refer for tracking, logging, providing or storing credentials to secret git repo
@@ -13,7 +13,7 @@ git status        //command to see what is happening in this repository
 Q. what is the reason why we use git ?
 A. git provides you versioning, it tells you what are the changes that are made
 
-# To start using Git, we need to create a Remote Repository either using the GitHub UI or using the command 
+#To start using Git, we need to create a Remote Repository either using the GitHub UI or using the command 
 git remote add "<repository URL>"
 Then we follow the next steps like git add, git commit and git push and we push our code to the remote repository. If we donot create or add a Remote Repository first then the code that we add or commit or push will not be processed for the remote repository.
 
@@ -47,7 +47,7 @@ Q. Diff b/w Git Clone vs Git Fork ?
 A. clone - pulling or downloading the code from GitHub
 Fork - Git it is a distributed version control system. That means the git code is present in one place but you know you can distribute it like you know you can create multiple copies or multiple replicas of this git and you can collaborate on that replica with other developers/teammates.
 
-# A branch is created to work on a new feature without impacting the existing code and then merging the new code back to the main branch if the new feature works successfully.
+#A branch is created to work on a new feature without impacting the existing code and then merging the new code back to the main branch if the new feature works successfully.
 git branch <branch_name>       //to create a branch
 
 git checkout -b <branch_name>          //to create a branch from the point where the code is written till this time
