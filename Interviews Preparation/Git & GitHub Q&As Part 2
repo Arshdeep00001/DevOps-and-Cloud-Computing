@@ -22,3 +22,24 @@ A. If you want to perform an action before or after some event, then we can do i
 Q. What is web hook ?
 A. If you want to trigger a pipeline or you want to run a python program after your git commit is done or if you want github to perform an action, so simply you can configure a web hook. In GitHub, go to GitHub Web Hooks, there are a lot of actions that can be taken place like you can perform web hooks after issues, you can perform web hooks after pull requests, you can perform web hooks after issue comments etc, i.e. for every action in github you can configure a webhook.
 
+Q. How to pull and push changes to git ?
+A. If you want to push you can use “git push” and if you want to pull you can simply do “git pull”.
+The git push command is used to upload content to a remote repository. The git pull command is used to fetch and download content from a remote repository and immediately update the local repository to match that content. The git pull command is actually a combination of two other commands, “git fetch” followed by “git merge”. “git pull –rebase” is used to combine “git fetch” followed by “git rebase”. (For more understanding refer https://www.atlassian.com/git/tutorials/syncing/git-pull#:~:text=git%20pull%20is%20one%20of,be%20confused%20with%20git%20pull%20 )
+
+Q. What is git stash and talk about its use cases ?
+A. Let's assume you're working on a code change and suddenly there is a very serious bug and you want to move from this code to the other bug and you cannot commit these changes because they are not ready or complete. So you can stash these code changes using “git stash” which means you are temporarily saving them in your git and you move to a different bug. Then you make code changes for the bug fix and once you are satisfied with them you push them and then you come back to the previous code and say “git stash pop”. So whatever the changes that you have stashed previously, you will get those changes back and you can continue with your code changes.
+
+Q. What is the difference between git clone and git fork ?
+A. Git clone is basically used for creating a copy of a particular remote repository in your local system whereas git fork is used for getting a particular git repository into your namespace. 
+
+Q. what is cherry-pick in git ?
+A. To merge a particular commit from one branch to the other branch.
+
+Q. How to amend a commit in git ?
+A. Amending is nothing but to add something to the existing commit. Let's assume you have done something wrong with your commit and you have pushed the commit. If you want to fix the broken commit then you can use “git commit –amend” and that would actually amend or fix your broken change. 
+
+Q. How do you resolve a merge conflict in git ?
+A. Basically it depends on the merge conflict itself like how did you run into this merge conflict,  who is the developer that has made the change. Let's assume that you are making a logic change to the calculator like improving the addition function and then you realize that it is actually creating a conflict with the existing code. So what you can do is that you can sit with the other developer and try to understand why he has made the change and you can come to a consensus that which change is correct and which change is wrong and update the code manually accordingly. So that is a simple way of resolving a merge conflict. So if you run into a conflict, you can do “git merge --abort” to completely remove your changes or if you know that your changes are fixed after you sat with the developer and you understood what has to be changed then simply add the changes back and do “git merge –restore”(or use git rebase for both commands). 
+
+
+
