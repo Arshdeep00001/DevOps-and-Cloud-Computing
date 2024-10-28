@@ -1,0 +1,51 @@
+Q. What is Docker or What is a Container ?
+A. Docker is an open source containerization platform and it is used to manage the life cycle of containers. It is used to package application into containers or to build containers or to manage life cycle of the containers. We use Docker to build the docker images, then write some Docker files and run some Docker containers and also push the images to Registries. 
+In simple words, you can understand as containerization is a concept or technology and Docker Implements Containerization.
+
+Q. How containers are different from virtual machines ?
+A. Containers and virtual machines are both technologies used to isolate applications and their dependencies, but they have some key differences:
+1. Resource Utilization: Containers share the host operating system kernel, making them lighter and faster than VMs. VMs have a full-fledged OS and hypervisor, making them more resource-intensive.
+2. Portability: Containers are designed to be portable and can run on any system with a compatible host operating system. VMs are less portable as they need a compatible hypervisor to run.
+3. Security: VMs provide a higher level of security as each VM has its own operating system and can be isolated from the host and other VMs. Containers provide less isolation, as they share the host operating system.
+4. Management: Managing containers is typically easier than managing VMs, as containers are designed to be lightweight and fast-moving.
+ 
+Explain the concepts represented in the above image.
+Also, container image size is very less as compared to a virtual machine image size.
+Never say that containers do not have an operating system. You can explain that containers are very lightweight in nature because they don't have complete operating system but they have very minimal system dependencies that are required to run your application. Eg:- We are running a Java application so what we would need is  an application, some Java runtime dependency to run the Java application and some system libraries that are mandatory to run your application. On the contrary, if we take example of a virtual machine, let's say we create an ec2 instance, then we will have the application, we will install Java, we will have the complete Ubuntu operating system, we have the kernel and we will have all the system libraries.
+
+Q. What is Docker life cycle ?
+A. There are three important things,
+1.	docker build -> builds docker images from Dockerfile
+2.	docker run -> runs container from docker images
+3.	docker push -> push the container image to public/private regestries to share the docker images.
+ 
+ 
+Whenever there is a requirement from the project to containerize an application, then I will initially start with writing a Docker file. In the docker file, I will write the set of instructions that are required to run the application and once I feel that the docker file is complete I will create an image out of it. Using the docker CLI, you can run Docker build which will essentially convert your Docker file to Docker image and after that you can again use Docker run command to execute your container. So again you will use Docker CLI to create a container and finally you can push your image to external Registries like Docker Hub, Red Hat Quay, ECR, ACR, GCR etc. And you can also pull the containers push the containers etc.
+
+Q. What are the different Docker components ?
+A. When we need to install Docker Desktop, we install Docker CLI which is ths Docker Client and then we install Docker Desktop which is the Docker demon which is responsible for executing your actions.
+ 
+As a user when you execute Docker build, then this request is received by the docker demon (Docker demon is the heart of Docker, if the demon goes down then nothing will work with respect to docker and demon is the one who is receiving your actions. Also demon is like the Jenkins Master in Jenkins which is receiving all your requests and will execute the request like understanding the docker file, running Docker build, creating an image, running a container etc. Then you have your Docker registry which is running again as a container or it depends on how you want it, some organization might want to have a personal external Docker registry or some want to create their own Docker registry then you can create one Docker container. Registry is also a container.
+
+Q. What is the difference between Docker copy and Docker add ?
+A. Docker add command can copy the files from a specific URL. For eg :- to get a log file from AWS S3 storage or to get some Java related file or any text file from GitHub as a raw file or to download a specific package from internet using wget or curl, in such cases you can use Docker add command and once you give it the URL it then it will try to download the file. 
+Docker copy is basically used to copy the files from your file system. For eg :- to copy the source code from your file system from your laptop or from your ec2 instance into the Container in such cases you will use the docker copy command.
+
+Q. What is the difference between CMD and entry point ?
+A. If you are using CMD then whatever you are putting in your Docker file as you your first commit that you are running inside the container can be overridden whereas if you are using an entry point then your commands or your arguments will not be overridden by default. So this is the difference between CMD and entry point. For eg:- you want to run any python application or you want to run any Django application where you have arguments like python manage.py followed by the URL, the host port and all of the details, so you can put Python and manage.py in the entry point whereas the other details like what is your host URL or what is the port you can pass all of those information in the CMD so that user can say that no I don't want to run it by default on the 8000 Port, I want to run it on 9000 Port, so in such cases if you pass those things as part of your command line arguments then it will be overwritten in the CMD.
+Basically, Entry point – cannot be changed or modified
+CMD - can be modified
+Sample Docker File:-
+FROM ubuntu
+WORKDIR /app
+COPY requirements.txt /app
+COPY devops /app
+RUN apt-get update && \
+    apt-get install -y python3 python3-pip && \
+    pip install -r requirements.txt && \
+    cd devops
+ENTRYPOINT ["python3"]
+CMD ["manage.py", "runserver", "0.0.0.0:8000"]
+
+Q. What are the networking types in Docker and what is the default ?
+A. 
