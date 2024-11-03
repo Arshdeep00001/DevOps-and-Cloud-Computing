@@ -1,0 +1,16 @@
+Observability 
+It has three pillars i.e.
+1) Metrics - What is the current status of the system? Eg:- What is the utilisation of CPU/Memory/Disk in the last hour/day/week/month? So, is the CPU/Memory/Disk under-utilised or over-utilised or used only once or used only on a particular time 
+2) Logging -: Why is that the current status of the system? Eg:- Why is the CPU/Memory/Disk under-utilised or over-utilised or used only once or used only on a particular time?
+3) Tracing - How to fix the current status of the system? Eg:- How to resolve the CPU/Memory/Disk issue if it is under-utilised or over-utilised or used only once or used only on a particular time?
+
+For observability, we will use Prometheus.
+
+The concept of Observability is used by SREs to take care that the SLAs signed with the customer don't get violated and are met all the time 24x7.
+
+Monitoring= Metrices + Alerts + Dashboard Creation using Grafana
+Eg, Alerts are generated when CPU utilisation reaches 80%.
+Monitoring doesn't cover logging and tracing.
+
+Observability needs to be instrumented by the Developers using Open Telemetry.
+Observability needs to be configured by the DevOps Teams using Prometheus.
