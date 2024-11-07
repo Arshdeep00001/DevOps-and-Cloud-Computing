@@ -1,0 +1,120 @@
+Interview Question Series - 5 (CI/CD)
+
+
+1. What is CI/CD?
+
+>> CI/CD stands for Continuous Integration/Continuous Deployment. It is a software development practice where code changes are automatically build, tested, and deployed frequently.
+
+ 
+
+2. What are the benefits of CI/CD?
+
+>> CI/CD reduces manual errors, speeds up the development process, enhances collaboration, and ensures the reliability and quality of software releases.
+
+ 
+
+3. Explain the difference between Continuous Integration and Continuous Deployment.
+
+>> Continuous Integration involves integrating code changes into a shared repository frequently, usually several times a day. Continuous Deployment involves automatically deploying code changes to production after passing the automated tests in the CI pipeline.
+
+ 
+
+4. What are some popular CI/CD tools?
+
+>> Jenkins, GitLab CI/CD, Travis CI, CircleCI, TeamCity, and GitHub Actions are some popular CI/CD tools.
+
+ 
+
+5. How does CI/CD improve software quality?
+
+>> CI/CD ensures that code changes are regularly tested in a consistent environment, which helps identify bugs early in the development cycle and ensures the stability and reliability of the software.
+
+ 
+
+6. What is a CI pipeline?
+
+>> A CI pipeline is a series of automated steps that are executed whenever code changes are made. It typically includes steps such as building the code, running tests, and deploying to a staging environment.
+
+ 
+
+7. Explain the concept of 'Build, Test, Deploy'.
+
+>> 'Build' involves compiling the source code into executable artifacts. 'Test' involves running automated tests to validate the correctness of the code changes. 'Deploy' involves deploying the tested code changes to the target environment.
+
+ 
+
+8. What is a Jenkinsfile?
+
+>> A Jenkinsfile is a text file that defines the CI/CD pipeline as code. It allows developers to version control and manage the pipeline along with the application code.
+
+ 
+
+9. How do you handle dependencies in a CI/CD pipeline?
+
+>> Dependency management is typically handled using package managers or dependency management tools such as Maven, npm, or pip. Dependencies are usually installed as part of the 'Build' step in the pipeline.
+
+ 
+
+10. How do you handle secrets and sensitive information in a CI/CD pipeline?
+
+>> Secrets and sensitive information such as API keys, passwords, and certificates should be stored securely and managed using a secrets management tool or service. They should never be hard-coded in scripts or configuration files
+
+ 
+
+11. What are the key components of a CI/CD pipeline?
+
+>> Key components include version control, build automation, automated testing, artifact management, deployment automation, and monitoring.
+
+ 
+
+12. How do you ensure security in a CI/CD pipeline?
+
+>> Security measures include code scanning for vulnerabilities, access control for pipeline execution, encryption of sensitive data, and regular security audits.
+
+ 
+
+13. What is Blue-Green deployment?
+
+>> Blue-Green deployment is a deployment strategy where two identical production environments, blue and green, are maintained. The new version of the application is deployed to the inactive environment, and once it's tested, the traffic is switched to the new environment.
+
+ 
+
+14. How do you handle rollbacks in a CI/CD pipeline?
+
+>> Rollbacks can be automated by keeping track of successful deployments and maintaining a backup of previous versions. In case of issues, the pipeline can be configured to automatically roll back to the last known good version.
+
+ 
+
+15. What are the challenges of implementing CI/CD?
+
+>> Challenges include cultural resistance to change, complex legacy systems, managing dependencies, ensuring security and compliance, and integrating with existing tools and processes.
+
+ 
+
+16. What is the difference between Docker and virtual machines for CI/CD?
+
+>> Docker containers are lightweight and share the host OS kernel, while virtual machines emulate an entire hardware environment. Docker containers provide faster startup times and better resource utilization compared to virtual machines.
+
+ 
+
+17. How do you monitor the performance of a CI/CD pipeline?
+
+>> Performance monitoring involves tracking key metrics such as build times, test pass rates, deployment frequency, and pipeline failures. Tools like Prometheus, Grafana, and Datadog can be used for monitoring.
+
+ 
+
+18. What are some best practices for CI/CD?
+
+>> Best practices include keeping pipelines fast and reliable, automating as much as possible, version-controlling everything, maintaining a clean and modular pipeline design, and regularly reviewing and improving the pipeline.
+
+ 
+
+19. How do you handle database schema changes in a CI/CD pipeline?
+
+>> Database schema changes can be managed using migration scripts that are version-controlled along with the application code. Tools like Flyway or Liquibase can automate the execution of these migration scripts as part of the deployment process.
+
+ 
+
+20. What is the role of DevOps in CI/CD?
+
+>> DevOps emphasizes collaboration and communication between development and operations teams to streamline the software delivery process. DevOps practices such as infrastructure automation, continuous monitoring, and blameless postmortems complement CI/CD practices to enable faster and more reliable software delivery.
