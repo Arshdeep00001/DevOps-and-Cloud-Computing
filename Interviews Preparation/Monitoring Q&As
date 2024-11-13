@@ -1,0 +1,129 @@
+Interview Question Series - (Monitoring)
+
+Here are the top frequently asked interview questions for Monitoring:
+
+
+
+1. What is monitoring in DevOps, and why is it important?
+
+>> Monitoring means keeping track of how your software and servers are doing to make sure everything is working well. It's important because it helps find and fix problems quickly and keeps things running smoothly.
+
+
+
+2. What are some popular monitoring tools used in DevOps?
+
+>> Common tools include Prometheus, Grafana, Nagios, Datadog, New Relic, Splunk, the ELK Stack (Elasticsearch, Logstash, Kibana), Zabbix, and AppDynamics.
+
+
+
+3. What's the difference between monitoring and observability?
+
+>> Monitoring checks specific things (like CPU usage) to catch problems. Observability goes deeper, helping you understand why things happen by looking at data like metrics, logs, and traces.
+
+
+
+4. What is 'alert fatigue,' and how can you prevent it?
+
+>> Alert fatigue is when there are too many alerts, and important ones get ignored. To prevent it, set better alert thresholds, group alerts by priority, and automate common fixes.
+
+
+
+5. What key metrics should you monitor in DevOps?
+
+>> Important metrics include CPU and memory usage, disk space, network speed, error rates, response times, uptime, and the availability of services.
+
+
+
+6. How does Prometheus work for monitoring?
+
+>> Prometheus collects data (metrics) from different sources, stores it, and lets you search through it using a query language (PromQL). You can also set up alerts based on the data.
+
+
+
+7. What is Grafana, and how does it work with monitoring tools?
+
+>> Grafana is a tool that shows monitoring data in the form of dashboards. It connects with tools like Prometheus and Elasticsearch to create visual displays of your metrics.
+
+
+
+8. How do you set up logging in a microservices setup?
+
+>> In microservices, use a log management system like the ELK stack to collect logs in one place. Make sure logs include useful info (like service name) and use formats like JSON for easy reading.
+
+
+
+9. What is an SLO, and how does it differ from an SLA?
+
+>> An SLO (Service Level Objective) is a goal for how well a service should perform. An SLA (Service Level Agreement) is a formal agreement with customers that includes consequences if the service doesn't meet certain standards.
+
+
+
+10. Describe blue-green deployments and how monitoring helps.
+
+>> Blue-green deployments use two environments: the "blue" (current) environment and the "green" (new version). Monitoring ensures the new version (green) works fine before switching users over.
+
+
+
+11. Why is log aggregation important in monitoring?
+
+>> Log aggregation collects all logs in one place, making it easier to find problems and understand what's happening across different services.
+
+
+
+12. How do you ensure monitoring systems are always available?
+
+>> Set up backup monitoring servers, use clusters or load balancers, and have failover systems so monitoring continues even if one server fails.
+
+
+
+13. What is synthetic monitoring, and how is it different from real user monitoring?
+
+>> Synthetic monitoring uses fake requests to test a system's performance. Real user monitoring (RUM) collects data from actual users. Synthetic is proactive, while RUM is based on actual user activity.
+
+
+
+14. What is the role of tracing in observability?
+
+>> Tracing follows requests as they move through different parts of the system, showing where delays or problems occur.
+
+
+
+15. What are black-box and white-box monitoring?
+
+>> Black-box monitoring looks at the system from the outside (like how a user would see it). White-box monitoring looks inside the system at metrics like CPU usage or memory.
+
+
+
+16. How can monitoring data help improve performance?
+
+>> Monitoring data can show where systems are slow, what resources are needed, and where things can be optimized to make systems run better.
+
+
+
+17. What are the main parts of the ELK stack?
+
+>> The ELK stack includes:
+
+Elasticsearch: Stores and searches log data.
+
+Logstash: Collects and processes log data.
+
+Kibana: Displays log data in visual dashboards.
+
+
+
+18. How is anomaly detection used in DevOps monitoring?
+
+>> Anomaly detection finds unusual patterns in metrics or logs that could indicate problems. Automated tools can help detect these patterns early.
+
+
+
+19. How does a service mesh help with monitoring in microservices?
+
+>> A service mesh manages communication between microservices and collects data like metrics and logs for monitoring without changing the application code.
+
+
+
+20. How do you decide which metrics and alerts to monitor?
+
+>> Start with metrics that affect user experience and important parts of the system, then expand to cover more as needed. Focus on key performance indicators first.
