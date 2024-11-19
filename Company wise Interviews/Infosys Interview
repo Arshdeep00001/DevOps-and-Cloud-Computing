@@ -1,0 +1,32 @@
+Infosys Interview Questions for DevOps Consultant :
+
+Pls introduce yourself OR Can you please walk me through your profile?
+What is your role in your Project?
+What are the Projects that you have worked upon?
+What is the tool that you use in your Project for CICD ? Jenkins 
+Diff between Jenkins and Harness ?
+What are the benefits of Harness over Jenkins and what are the benefits of migrating from Jenkins to Harness ?
+Explain the CICD Roadmap & Pipeline that you have developed.
+How do you troubleshoot what is the issue when a CICD Pipeline fails ? Using multiple stages and checking logs
+What are types of Pipelines in Jenkins? Declarative and Scriptive Pipeline 
+What is your number one and number two skill ?
+What are the activities that you perform with Docker?
+What kind of branching strategy do you follow in Git and GitHub?
+Diff between git pull and git fetch.
+Write the syntax of Dockerfile on a Text editor.
+How do we create multiple containers using docker or dockefile? (Using Docker Compose or Replica Set in Kubernetes)
+Where is our static code stored ? For the base image, the static code is stored In Jenkins workspace. For distroless image, the static code is stored In the base image.
+In the dockerfile, when we use the copy command then it copies static code from where to where?
+Write the syntax of multi stage Pipeline using Groovy script.
+Write the syntax of CICD Pipeline using shell scripting to automate and trigger the CICD Pipeline.
+How do you monitor your applications in real time? In the initial phase/starting of my career, I worked in a Support Project working on monitoring Applications using a tool called Kibana. Actually, the tool was created by some other team we had to monitor the dashboard and check the logs. Also, I was involved in other activities like creating documents using Excel and PowerPoint.
+What is a VPC?
+What are the advantages of a VPC?
+How do two different VPCs connect to each other or any other Application ?
+What is a Jenkins file?
+What is IAC ?
+What is a state file in Terraform?
+What is Hashicorp Vault ?
+Tell me anything that you have learnt last time in your project that was new to you.
+Where do you see yourself in the next 2-3 years ?
+What are the next set of technologies that you are going to learn in the future?
