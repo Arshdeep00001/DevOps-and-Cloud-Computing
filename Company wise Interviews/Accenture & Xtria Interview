@@ -1,0 +1,229 @@
+Grep
+Ping  ttl time to live
+Nslookup
+Netstat
+
+What is ssh? When do we disable ssh
+
+Scriptive and Declarative Pipeline
+Sre vs platform engineer vs devops engineer
+
+What all Git commands do you know
+How does a multi branch pipeline works
+Git stash, cherry pick, 
+Git rm vs git stash
+Git rebase vs git squash
+Git pull vs fetch
+
+
+GitHub vs Azure Repos
+
+Explain Agile
+
+How to build a project
+
+-p and interactive mode in docker? 
+Init container 
+Docker how will you configure n number of resources
+Diff bw Docker Daemon and Docker Services
+Docker add vs copy
+Docker cmd vs Entrypoint
+
+Different types of Volumes: Named - has name and maintained by Docker, Location is var/lib/docker 
+Anonymous - doesn't have name and maintained by Docker, Location is var/lib/docker
+and Bind Mount - a file or directory of host machine is mounted into a container. So, location or name will be the file on the host system.
+
+Types of Docker Networks:- Bridge -
+Host
+Overlay
+
+Explain all the Dockerfile commands
+
+Explain all the Docker commands
+docker build -t <docker_username>/<project name>:<tag> . //here t is for tag
+docker run -it -p <host port>:<container port> <project name>:<tag>
+//Here -it is to run in interactive mode, -p is for port, 
+docker images
+docker ps -a
+docker push <docker_username>/<project name>:<tag>
+docker start
+docker stop
+docker rm
+docker volume create <volume name>
+docker run -it -v <docker_username>/<project name>:<tag> bin/bash
+
+Docker basic command
+
+Q. Is docker container a process or a light weight operating system?
+A. A Docker container is a process on the host operating system that runs in an isolated environment. It is not a lightweight operating system but mimics one to some extent because it includes the necessary files, libraries, and dependencies required to run the application inside it. Here's a detailed explanation:
+Docker Container as a Process
+A Docker container runs as a process on the host operating system, using the host's kernel.
+Technologies like Linux namespaces and cgroups are used to isolate the container's environment.
+Namespaces provide process isolation (separate process IDs, network stack, and file system views).
+Cgroups manage resource limits (CPU, memory, etc.).
+The container process operates independently of other processes, giving the illusion of a standalone system.
+Why it Feels Like an Operating System.
+Each Docker container has its own user space, including libraries and binaries required for the application. This gives the container an OS-like environment.
+Containers are built from images, which often include a minimal base OS layer (e.g., Alpine, Ubuntu) for compatibility.
+However, the container does not include a kernel—it shares the kernel of the host operating system. This is what differentiates it from a virtual machine.
+Key Characteristics
+Lightweight: Containers share the host OS kernel, so they don't have the overhead of a full guest operating system like virtual machines.
+Isolated Process: The container is a process running on the host with its own isolated filesystem, network, and process tree.
+Conclusion
+A Docker container is best described as an isolated process, not a lightweight operating system. It behaves like a small OS because it includes application-specific dependencies but relies on the host OS kernel for execution.
+
+
+
+
+
+What is Docker Agent
+What is a Docker plugin 
+How to prune docker images - The docker image prune command allows you to clean up unused images. By default, docker image prune only cleans up dangling images.
+
+docker image prune [OPTIONS]       //to Remove all unused images. If -a is specified, also remove all images not referenced by any container.
+
+The following removes images created before 2017-01-04T00:00:00:
+docker image prune -a --force --filter "until=2017-01-04T00:00:00"
+
+The following removes images created more than 10 days (240h) ago:
+docker image prune -a --force --filter "until=240h"
+
+docker container prune        // This will remove all stopped containers.
+
+docker volume prune             //This will remove all volumes not used by at least one container.
+
+docker network prune           //This will remove all networks not used by at least one container.
+
+docker system prune
+//This will remove:
+        - all stopped containers
+        - all networks not used by at least one container
+        - all dangling images
+        - unused build cache
+To also prune volumes, add the --volumes flag.
+
+
+ECR Elastic Container Registry is similar to Docker Hub
+Docker Swarm vs Kubernetes
+
+How many nodes are used in your organisation?
+In our project we have 3-4 master nodes and 10-12 worker nodes. I don't manage the cluster so cannot tell you the exact number. We use shared cluster isolated using namespaces.
+
+Diff bw pod and container
+What is side car and side car proxy
+How is side car configured
+Namespaces
+
+Istio - In istio, we use service mesh to increase security within the cluster and intelligent traffic management.
+
+Service Mesh (Refer Richard Chesterwood & AV)
+Kubernetes tends and tolerance - 
+
+Explain Helm, how it is written
+What all Helm commands have you used
+Cluster creation and handling errors 
+Persistent volume claim 
+Bind mount 
+Namespace
+
+KLlkcoda
+Kubectl apply -f pods.yaml
+Kubectl get pods -o wide
+Curl <ip>:<port>
+
+
+
+For Auto Scaling - Horizontal Pod Scaler, it will set the minimum and maximum pods to be available as per users.
+
+Pod vs deployment vs service vs ingress
+Pod vs replica set controller vs deployment
+Services in kubernetes - load balancer service, node port service, cluster ip
+What is Kubernetes control plane service?
+Which Kubernetes control plane service will deploy on worker nodes ?
+If a pod fails how will you debug 
+
+What is the working of cluster ip ?
+
+How are the microservices communicating to each other 
+
+Jenkins installation, upgrade
+Explain Jenkins Architecture 
+Types of secrets or credentials in Jenkins
+Jenkins configuration stored where? -in varlib Jenkins
+Jenkins runs by default on which port - 8080
+In which file system is Jenkins configuration present
+How is Jenkins run on Containers
+Steps to install Jenkins on a different server
+How to migrate Jenkins running on one server to another server
+How to start a Jenkins pipeline from where it got failed
+Types of Pipelines in Jenkins - scriptive and declarative
+
+Q. In a Jenkins pipeline for any java or .net project, how do you make sure the different environments like QA & Staging will have particular dependencies installed while building? 
+For example: If the QA environment is using the java:8 version and the Staging is using some 8.8 version. How do you define these dependencies in a Jenkins pipeline?
+A. We can use tools section in pipeline 
+Download JDK plugin then in manage Jenkins section 
+Download your java version like java 8 and java 8.8
+In pipeline you have to mention which version you want to use 
+Example 
+Tools{
+Jdk: 'jdk8'
+}
+
+How is a Jenkins pipeline triggered when a Developer pushes the code on a Git repository? - using Webhooks, Jenkins will not watch the repository but Git will send notification to Jenkins 
+( Other methods are poll SCM and build triggers but they involve continuous and multiple api calls in the day to check if there is a change)
+
+What type of Jenkins File or Jenkins Agent do you use ? we use Declarative Jenkins files as they are very easy to write and collaborate ( Scripted pipelines are unstructured, only used if there is a dedicated Developer Team that writes the Jenkins files). we use Docker Agent which is very light weight and useful and doesn't require installing tools like Maven, Java, Python etc.
+
+What is an artifact
+
+What is your approach to perform CD ?
+Previously Ansible playbooks or shellscripts were used and CD was included with CI pipelines and the artifact was pushed or deployed to the Kubernetes or target platform. The problem with this approach is that it is not much scalable and Ansible playbooks or shellscripts are not particularly designed for CD.
+So, we choose CD tools Argo Image Updator and Argo CD which are based on GitOps. The source of GitOps tools is the GitHub repository and not the source code. So, firstly we should create a GitHub repository similar to our source code and it should have our Manifests files. Now, if we are not using a GitOps tool then we have to directly update the Kubernetes cluster manifest files but as approach doesn't go through any verification or auditing or code review. So, we will use GitHub repository as source code and to create manifest files for our CD pipelines. Thus, we use GitOps. So, GitOps tools like Argo CD is residing inside the Kubernetes cluster and is a Kubernetes controller and it always tries to maintain a state between our Git repository and Kubernetes cluster. Whenever there is a new Image or volume or mount or any change in these resources, Argo CD picks those changes and deploys them to Kubernetes cluster.
+
+What is Argo Image Updator? It will continuously monitor the Docker Hub or any other Container Registry and whenever a new Image version is pushed into the Container Registry, then Argo Image Updator will directly update the Git repository with the new version in the pod.yaml or deploy.yaml or in the helm charts values.yaml etc.
+( For this task we can also use Shell Scripts or GitHub Actions or a Jenkins Pipeline to push the new Image Manifests to Git. Thus, a new commit is created in the Git repository by Argo Image Updator.
+
+What is Argo CD ? It is a tool which is continuously watching the Git repository and whenever there is a change/commit in the Git repository, then it takes the new pod.yaml or deploy.yaml or the helm chart values.yaml and deploys it to the Kubernetes cluster. 
+
+Complete cicd flow of our project 
+
+Challenge faced while storing secrets in ci pipeline 
+
+Types of Deployments
+Canary, Blue Green, Dark Release, rolling update
+
+
+How we perform each of the deployments in real world 
+
+How do you ensure that there is no downtime during a deployment? Using rolling update - it updates minimum 1 pod at a time. We can specify the number or the percentage on which we need to perform the update 
+
+Include Iac tool
+How to create eks cluster with Terraform AV
+
+Cloud
+What is serverless
+
+
+Project Questions:
+What IAM role or policies are used in an organization in real world (in AWS)? 
+
+
+How can we connect an application on Kubernetes to a database which is running outside the cluster like On-Premise or RHEL server using the Kubernetes secret ? :- We can connect only through the Kubernetes secret by creating the environment variables of Kubernetes secret.
+
+If we make changes to the config maps or the secrets file, do we need to restart the Kubernetes Pod? - For Kubernetes version 1.24 or older, we had to restart the Kubernetes cluster again. For versions after 1.24 we don't need to restart the cluster.
+
+
+
+
+
+Xtria Interview Questions 
+
+Day to day activities 
+
+If image is running but application not working, how will you debug it + command 
+Types of services 
+If we want to access an application in public, which service will we use
+How are microservices being managed in the application that you have deployed 
+Explain the deployment strategy that you used
+
+
