@@ -1,0 +1,74 @@
+Kubernetes Interview Questions 
+
+Question 1
+
+What is the difference Docker and Kubernetes ?
+
+Docker is a container platform where as Kubernetes is a container orchestration environment that offers capabilities like Auto healing, Auto Scaling, Clustering arıd Enterprise level support like Load balancing.
+
+Question 2
+
+What are the main components of Kubernetes architecture?
+
+On a broad level, you can divide the kubernetes components in two parts
+
+1. Control Plane (ARI SERVER, SCHEDULER, Controller Manager, C-CM, ETCD)
+
+2. Data Plane (Kubelet, Kube-proxy, Container Runtime)
+
+Question 3
+
+What are the main differences between the Docker Swarm and Kubernetes ?
+
+Kubernetes is better suited for large organisations as it offers more scalability, networking capabilities like policies and huge third party ecosystem support.
+
+Question 4
+
+What is the difference between Docker container and a Kubernetes pod ?
+
+A pod in kubernetes is a runtime specification of a container in docker. A pod provides more declarative way of defining using YAML and you can run more than one container in a pod.
+
+Question 5
+
+What is a namespace in Kubernetes ?
+
+In Kubernetes namespace is a logical isolation of resources, network policies, rbac and everything. For example, there are two projects using same k8s cluster. One project.can use ns1 and other project can use ns2 without any overlap and authentication problems.
+
+Question 6
+
+What is the role of kube proxy?
+
+Kube-proxy works by maintaining a set of network rules on each node in the cluster, which are updated dynamically as services are added or removed. When a client sends a request to a service, the request is intercepted by kube-proxy on the node where it was received. Kube-proxy then looks up the destination endpoint for the service and routes the request accordingly.
+
+Kube-proxy is an essential component of a Kubernetes cluster, as it ensures that services can communicate with each other.
+
+Question 7
+
+What are the different types of services within Kubernetes?
+
+There are three different types of services that a user can create.
+
+1. Cluster IP Mode
+
+2. Node Port Mode
+
+3. Load Balancer Mode
+
+Question 8
+
+What is the difference between NodePort and Load Balancer type service?
+
+When a service is created a NodePort type, The kube-proxy updates the IPTables with Node IP address and port that is chosen in the service configuration to access the pods.
+
+Where as if you create a Service as type Load Balancer, the cloud control manager creates a external load balancer IP using the underlying cloud provider logic in the C-CM.
+
+Users can access services using the external IP
+
+Question 9
+
+What is the role of Kubelet ?
+
+Kubelet manages the containers that are scheduled to run on that node. It ensures that the containers are running and healthy, and that the resources they need are available.
+
+Kubelet communicates with the Kubernetes API server to get informationabout the containers that should be running on the node; and then starts and stops the containers as needed to maintain the desired state. It also monitors the containers to ensure that they are running correctly, and restarts them if necessary.
+
