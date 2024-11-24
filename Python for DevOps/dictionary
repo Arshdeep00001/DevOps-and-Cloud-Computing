@@ -1,0 +1,27 @@
+#A dictionary is an unordered collection of items. Each item stored in a dictionary has a key and value.
+#You can use a key to retrieve the corresponding value from the dictionary.
+#Dictionaries have the type dict.
+#Dictionaries are often used to store many pieces of information e.g. details about a person, in a single variable.
+#Dictionaries are created by enclosing key-value pairs within braces or curly brackets { and }.
+person = {'name':'Arsh',
+          'age':30}
+print(type(person))
+print(person)
+# Dictionaries can also be created using the dict function.
+person2 = dict(name='Rahul', age=32)
+print(type(person2))
+print(person2)
+#Keys can be used to access values using square brackets [ and ].
+print(person['name'])
+print(person2.get('name'))
+print('age' in person2)     # You can check whether a key is present in a dictionary using the in operator.
+person2['age'] = 44     # You can change the value associated with a key using the assignment operator.
+person2['gender'] = 'male'      # The assignment operator can also be used to add new key-value pairs to the dictionary.
+person2.pop('age')     # To remove a key and the associated value from a dictionary, use the pop method.
+print(person2)
+#Dictionaries also provide methods to view the list of keys, values, or key-value pairs inside it.
+print(person.keys())
+print(person.values())
+print(person.items())
+#The results of keys, values, and items look like lists. However, they don't support the indexing operator [] for retrieving elements.
+#https://www.w3schools.com/python/python_ref_dictionary.asp 
