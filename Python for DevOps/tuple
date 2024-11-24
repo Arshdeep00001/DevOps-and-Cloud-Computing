@@ -1,0 +1,29 @@
+# A tuple is an ordered collection of values, similar to a list. However, it is not possible to add, remove, or modify values in a tuple.
+# A tuple is created by enclosing values within parentheses ( and ), separated by commas.
+# Any data structure that cannot be modified after creation is called immutable. You can think of tuples as immutable lists.
+
+my_color = ('red', 'blue', 'green')
+#my_color[1] = 'black'   # Error:- 'tuple' object does not support item assignment
+print (len(my_color))
+print (my_color[0])
+print('yellow' in my_color)
+print(type(my_color))
+
+# You can also skip the parantheses ( and ) while creating a tuple. Python automatically converts comma-separated values into a tuple.
+my_shape = 'square', 'circle', 'rectangle'
+#my_shape[1] = 'triangle'    # Error:- 'tuple' object does not support item assignment
+#my_shape.append('triangle')     # Error:- 'tuple' object has no attribute 'append'
+#my_shape.remove('triangle')     # Error:- 'tuple' object has no attribute 'remove'
+print (my_shape[0])
+# You can also create a tuple with just one element by typing a comma after it.
+my_name = 'Arsh',
+print(type(my_name))
+
+# You can convert a list into a tuple using the tuple function, and vice versa using the list function
+t = tuple(['a','b','c'])
+print(type(t))
+l = list(('d','e','f'))
+print(type(l))
+#help(my_color)     # There is an easier way to check a method's or object's documentation, use the 'help' function.
+#Tuples have just two built-in methods: count and index.
+
