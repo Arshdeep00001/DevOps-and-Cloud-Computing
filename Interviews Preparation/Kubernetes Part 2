@@ -1,0 +1,77 @@
+Q. What are some challenges with Prometheus ?
+
+A. Despite of being very good at K8 monitoring, prometheus still have some issues:
+
+*Prometheus HA support.
+*No downsampling is available for collected metrics over the period of time.
+*No support for object storage for long term metric retention.
+
+You may run multiple instances of prometheus HA but grafana can use only of them as a datasource. You may put load balancer in front of multiple prometheus instances, use sticky sessions and failover if one of the prometheus instance dies. This make things complicated. Thanos is another project which solve these challenges.
+
+
+Q. How do you handle your kubernetes cluster security?
+
+A. There are many things that you can do, some of them are:
+
+*By default, POD can communicate with any other POD, we can setup network policies to limit this communication between the PODS.
+*RBAC (Role based access control)
+*Use namespaces for multi tenancy
+*Set the admission control policies to avoid running the privileged containers.
+*Turn on audit logging.
+
+
+Q. How two containers running in a single POD have single IP address?
+
+A. Kubernetes makes use of Pause containers for sharing networking.
+
+Kubernetes implements this by creating a special container for each pod whose only purpose is to provide a network interface for the other containers. These is one pause container which is responsible for namespace sharing in the POD. Generally, people ignore the existence of this pause container but actually this container is the heart of network and other functionalities of POD. It provides a single virtual interface which is used by all containers running in a POD.
+
+
+Q. What is Service Mesh and why do we need it ?
+
+A. A service mesh ensures that communication among containerized and often ephemeral application infrastructure services is fast, reliable, and secure. The mesh provides critical capabilities including service discovery, load balancing, encryption, observability, traceability, authentication and authorization, and support for the circuit breaker pattern.
+
+
+Q. What is init container and why do we need it ?
+
+A. Init Containers are the containers that should run and complete before the startup of the main container in the pod. It provides a separate lifecycle for the initialization so that it enables separation of concerns in the applications.
+
+All the init Containers will be executed sequentially and if there is an error in the Init container the pod will be restarted which means all the Init containers are executed again. So, it's better to design your Init container as simple, quick, and Idempotent.
+
+source:
+https://medium.com/bb-tutorials-and-thoughts/kubernetes-interview-questions-part-1-eb88a9df785f 
+
+
+Q. What is a Pod Disruption Budget?
+
+A. A PDB specifies the number of replicas that an application can tolerate having, relative to how many it is intended to have. For example, a Deployment which has a spec.replicas: 5 is supposed to have 5 pods at any given time. If its PDB allows for there to be 4 at a time, then the Eviction API will allow voluntary disruption of one (but not two) pods at a time.
+
+
+Q. What's the Difference Between a Voluntary and Involuntary Disruption?
+
+A. It is important to remember that PDBs only apply to voluntary pod disruptions/evictions, where users and administrators temporarily evict pods for specific cluster actions. Users may apply other solutions for involuntary pod disruptions, such as replicating applications and spreading them across zones.
+
+
+Q. What is a custom controller? Did you build one and How to build one?
+
+
+
+
+Q. What is a SideCar Container and when to use one?
+
+A. Whenever you want to extend the functionality of the existing single container pod without touching the existing one.
+
+Whenever you want to enhance the functionality of the existing single container pod without touching the existing one.
+
+You can use this pattern to synchronize the main container code with the git server pull.
+
+You can use this pattern for sending log events to the external server.
+
+You can use this pattern for network-related tasks.
+
+source:
+
+https://medium.com/bb-tutorials-and-thoughts/kubernetes-interview-questions-part-1-eb88a9df785f
+
+
+Q. What is a Pod Security Policy?
