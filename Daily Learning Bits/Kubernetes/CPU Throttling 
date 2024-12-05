@@ -1,0 +1,6 @@
+CPU Throttling 
+
+Throttling is a mechanism in Processors to reduce the clock speed when the temperature in the system reaches above TJ Max (or Tcase). This is to protect the processor and to indicate to the user that there is an overheating issue in their system that they need to monitor.
+
+For example, You're happily driving along in your car when you suddenly start slowing down for no discernible reason. Even if you press the petal closer to the floor, you continue to decelerate. You're being throttled by a force beyond your control. That doesn't actually happen with cars. But it does happen in Kubernetes, due to a process called CPU throttling. By restricting the amount of CPU available to containers, throttling slows them down.
+CPU throttling happens in order to prevent the system from crashing due to exhaustion of CPU resources. But it can also negatively impact performance – which is why it's important to understand how to manage these resources in Kubernetes in ways that keep workloads running smoothly, without unexpected throttling events.
