@@ -1,5 +1,7 @@
 CPU Throttling 
 
+Use case: CPU Throttling is a key metric that is monitored in Dynatrace or Prometheus like monitoring Applications.
+
 Throttling is a mechanism in Processors to reduce the clock speed when the temperature in the system reaches above TJ Max (or Tcase). This is to protect the processor and to indicate to the user that there is an overheating issue in their system that they need to monitor.
 
 For example, You're happily driving along in your car when you suddenly start slowing down for no discernible reason. Even if you press the petal closer to the floor, you continue to decelerate. You're being throttled by a force beyond your control. That doesn't actually happen with cars. But it does happen in Kubernetes, due to a process called CPU throttling. By restricting the amount of CPU available to containers, throttling slows them down.
