@@ -4,3 +4,6 @@ Throttling is a mechanism in Processors to reduce the clock speed when the tempe
 
 For example, You're happily driving along in your car when you suddenly start slowing down for no discernible reason. Even if you press the petal closer to the floor, you continue to decelerate. You're being throttled by a force beyond your control. That doesn't actually happen with cars. But it does happen in Kubernetes, due to a process called CPU throttling. By restricting the amount of CPU available to containers, throttling slows them down.
 CPU throttling happens in order to prevent the system from crashing due to exhaustion of CPU resources. But it can also negatively impact performance – which is why it's important to understand how to manage these resources in Kubernetes in ways that keep workloads running smoothly, without unexpected throttling events.
+
+
+To go deep into the topic refer :- https://www.groundcover.com/blog/kubernetes-cpu-throttling#:~:text=By%20restricting%20the%20amount%20of,to%20exhaustion%20of%20CPU%20resources. 
