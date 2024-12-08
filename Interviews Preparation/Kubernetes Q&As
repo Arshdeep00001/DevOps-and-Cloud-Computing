@@ -2,9 +2,10 @@ Kubernetes Interview Questions
 
 Question 1
 
-What is the difference Docker and Kubernetes ?
+What is the difference between Docker and Kubernetes ?
 
-Docker is a container platform where as Kubernetes is a container orchestration environment that offers capabilities like Auto healing, Auto Scaling, Clustering arıd Enterprise level support like Load balancing.
+Docker is a container platform where as Kubernetes is a container orchestration environment that offers capabilities like Auto healing, Auto Scaling, Clustering and Enterprise level support like Load balancing.
+Containers are ephemeral in nature i.e. containers can go down due to multiple reasons. If container goes down then application is down, so your end user who is trying to access your application he will see a traffic loss. So to avoid that, you can move to a container orchestration platform Solutions like kubernetes. Kubernetes is a cluster itself, like in production you can join or combine multiple virtual machines and create a kubernetes cluster so that even if one of your node goes down then because Kubernetes is a cluster it will immediately move the Pod from that specific node to a different node. Kubernetes offers integration with custom resource definitions or you you can deploy any custom kubernetes controllers that are developed by other people, example Ingress controllers.
 
 Question 2
 
@@ -12,27 +13,34 @@ What are the main components of Kubernetes architecture?
 
 On a broad level, you can divide the kubernetes components in two parts
 
-1. Control Plane (ARI SERVER, SCHEDULER, Controller Manager, C-CM, ETCD)
+1. Control Plane (API SERVER :- responsible for handling the API is talking to the end users, 
+SCHEDULER :- responsible for scheduling the resources on the kubernetes cluster, 
+Controller Manager :- takes care of this default controllers in kubernetes like replica set or replication controller, 
+C-CM (Cloud control manager) :- used to implement kubernetes on any cloud provider, eg. Amazon has implemented kubernetes as managed service on EKS platform. So whenever you install this kubernetes cluster, these Cloud providers will contribute to the cloud control manager, eg. you created a service of type load balancer so under the hood the cloud control manager has the logic that is written by AWS which can spin up a load balancer IP address,
+ETCD :- kubernetes object store where all the resources of the kubernetes are stored as objects)
 
-2. Data Plane (Kubelet, Kube-proxy, Container Runtime)
+2. Data Plane (Kubelet :- responsible for managing the pods on the worker nodes. Eg, it checks if pod is running in a healthy state or not. If a pod has to be restarted or if the Pod has gone down, then Kubelet takes care of starting the Pod, 
+Kube-proxy :- it is a networking component of kubernetes which updates the IP tables and takes care of networking. Eg. we create a service of type node Port so under the hood Kube proxy understands that there is a service that is created of type node Port so it updates the IP tables in such a way that when somebody access the node_IP_address:specific_Port then request has to be sent to the Pod , 
+Container Runtime :- provides a runtime to run a container. Kubernetes is not opinionated about this like you can use any runtime such as Docker shim, containerD, Creo. You have to install the container runtime on each and every node. , 
+Kube DNS)
 
 Question 3
 
 What are the main differences between the Docker Swarm and Kubernetes ?
 
-Kubernetes is better suited for large organisations as it offers more scalability, networking capabilities like policies and huge third party ecosystem support.
+Kubernetes is a quite popular choice and Docker Swarm is a Docker based solution. Kubernetes is better suited for large organizations/Enterprises or even mid-skilled organizations as it offers more scalability, networking capabilities like policies and huge third party ecosystem support. Docker Swarm is very easy to install & use but only suitable for small scale or simple applications because when you are going for scaling then kubernetes has multiple options and has advanced networking capabilities and you can use Flannel, Calico or SDN or OVN. Using all of these things with kubernetes is very easy but with docker swarm the support is very limited. Also, you have a lot of third party support for kubernetes like CNCF community has been very active and because kubernetes supports custom resource definitions, so anybody who can write a kubernetes controller, if they feel that kubernetes is not supporting something then they can extend the capabilities of kubernetes because it's all about installing and deploying a controller in kubernetes and you can extend the capabilities to whatever extent that you want.
 
 Question 4
 
 What is the difference between Docker container and a Kubernetes pod ?
 
-A pod in kubernetes is a runtime specification of a container in docker. A pod provides more declarative way of defining using YAML and you can run more than one container in a pod.
+A pod in kubernetes is a runtime specification of a container in docker. A pod provides more declarative way of defining kubernetes resources required to run container using YAML. You can run more than one container in a pod and  multiple containers can communicate within the pod using the same network and share same storage and resources inside the Pod .
 
 Question 5
 
 What is a namespace in Kubernetes ?
 
-In Kubernetes namespace is a logical isolation of resources, network policies, rbac and everything. For example, there are two projects using same k8s cluster. One project.can use ns1 and other project can use ns2 without any overlap and authentication problems.
+In Kubernetes namespace is a logical isolation of resources, network policies, rbac and everything. So, multiple project teams in a company can work on the same Kubernetes cluster but each of them will have a dedicated namespace. For example, there are two projects using same k8s cluster. One project can use ns1 and other project can use ns2 without any overlap and authentication problems. 
 
 Question 6
 
@@ -41,11 +49,13 @@ What is the role of kube proxy?
 Kube-proxy works by maintaining a set of network rules on each node in the cluster, which are updated dynamically as services are added or removed. When a client sends a request to a service, the request is intercepted by kube-proxy on the node where it was received. Kube-proxy then looks up the destination endpoint for the service and routes the request accordingly.
 
 Kube-proxy is an essential component of a Kubernetes cluster, as it ensures that services can communicate with each other.
+It is a networking component of kubernetes which updates the IP tables and takes care of networking. Eg. we create a service of type node Port so under the hood Kube proxy understands that there is a service that is created of type node Port so it updates the IP tables in such a way that when somebody access the node_IP_address:specific_Port then request has to be sent to the Pod
 
 Question 7
 
 What are the different types of services within Kubernetes?
 
+A Service has three major responsibilities i.e. load balancing, service discovery and exposing your applications to the external world.
 There are three different types of services that a user can create.
 
 1. Cluster IP Mode
@@ -54,6 +64,8 @@ There are three different types of services that a user can create.
 
 3. Load Balancer Mode
 
+If you create a service as a cluster IP mode, then your pods or service will get a cluster IP, so if you try to access your service then you will be only able to access the service using the cluster IP which is only available or accessible within the kubernetes cluster whereas if you try to create the services type node Port mode, then your service can be accessed on the Node_IP:port_number that you define in your service.yaml file. So anybody in your organization who has the access to your node IP address, example you have created a kubernetes cluster on your AWS platform and configured your worker nodes as ec2 instances, now anybody who can reach that ec2 instance (ping the IP address of the ec2 instance) then that node is accessible to that specific users. So whoever can access the worker nodes or the IP address of your kubernetes cluster, they can access your applications if they are deployed in the node Port mode, but for the end users who are sitting outside your organization (eg. your end user is in India and your applications or kubernetes cluster is in the US) so in such cases if they don't have access to your network, then you have to expose your applications as load balancer mode. So Cloud control manager component of kubernetes will create a public IP address or a load balancer IP address for you using which you or anybody in the world can access that applications (this can also be done using Ingress)
+
 Question 8
 
 What is the difference between NodePort and Load Balancer type service?
@@ -61,14 +73,16 @@ What is the difference between NodePort and Load Balancer type service?
 When a service is created a NodePort type, The kube-proxy updates the IPTables with Node IP address and port that is chosen in the service configuration to access the pods.
 
 Where as if you create a Service as type Load Balancer, the cloud control manager creates a external load balancer IP using the underlying cloud provider logic in the C-CM.
-
 Users can access services using the external IP
 
 Question 9
 
 What is the role of Kubelet ?
 
-Kubelet manages the containers that are scheduled to run on that node. It ensures that the containers are running and healthy, and that the resources they need are available.
+Kubelet manages the containers that are scheduled to run on that node. It ensures that the containers are running and healthy, and that the resources they need are available. It is also responsible for managing the pods on the worker nodes. It also checks if pod is running in a healthy state or not. If a pod has to be restarted or if the Pod has gone down, then Kubelet takes care of starting the Pod (in the background it informs the kube API server that the Pod has gone down, then API server node notifies to the replica set controller or the deployment and it has to scale up the Pod.
 
-Kubelet communicates with the Kubernetes API server to get informationabout the containers that should be running on the node; and then starts and stops the containers as needed to maintain the desired state. It also monitors the containers to ensure that they are running correctly, and restarts them if necessary.
+Kubelet communicates with the Kubernetes API server to get information about the containers that should be running on the node and then starts and stops the containers as needed to maintain the desired state. It also monitors the containers to ensure that they are running correctly, and restarts them if necessary.
 
+Q10. Day to day activities on Kubernetes.
+
+As part of the devops engineer role we manage kubernetes clusters for our organization and we also ensure that the applications are deployed onto the kubernetes cluster and there are no issues with the application, so we have set up monitoring on our kubernetes cluster. We ensure that whenever there are bugs on the kubernetes cluster, for example the developers are not able to troubleshoot some issue with respect to pods or developers are not able to troubleshoot with respect to Services or they are not able to route the traffic inside the kubernetes cluster, so in such cases as subject matter expertise on the kubernetes Clusters we come into picture and we solve their problems. Apart from that we also do a lot of Maintenance activities, for example we have kubernetes clusters with three Master nodes and 10 worker nodes, so we have to do some continuous maintenance activities on these worker nodes like upgrading the versions of these worker nodes or installing some default mandatory packages ensuring that these worker nodes are not exposed to security vulnerabilities. So all of these things are our day-to-day activities on kubernetes. Apart from that we also serve as subject matter expertise on kubernetes, if anyone in the organization has any issues with kubernetes they create a Jira Ticket for us or and we will help them in resolving the issues or making them understand the concept of kubernetes.
