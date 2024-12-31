@@ -1,0 +1,115 @@
+Difference between public and private subnet?
+
+The key difference between a public subnet and a private subnet lies in their ability to access and be accessed from the internet. Here’s a breakdown:
+
+Public Subnet
+
+Definition: A subnet that is directly accessible from the internet.
+
+Route Table Configuration: It has a route to an Internet Gateway (IGW), allowing resources in the subnet to send and receive traffic to/from the internet.
+
+Use Cases:
+
+Hosting public-facing services like web servers.
+
+Resources that need to communicate directly with the internet.
+
+
+Security Considerations: Resources in a public subnet are exposed to the internet, so proper security measures (e.g., firewalls, security groups) are critical.
+
+
+Private Subnet
+
+Definition: A subnet that is not directly accessible from the internet.
+
+Route Table Configuration: It does not have a route to an Internet Gateway but can have routes to a NAT Gateway/Instance or other private network connections.
+
+Use Cases:
+
+Hosting backend services like databases, application servers, and other resources that should remain isolated.
+
+Resources that only need to initiate outbound internet traffic (e.g., for software updates) but don't need inbound traffic from the internet.
+
+
+Security Considerations: Resources in a private subnet are protected from direct internet exposure, adding an extra layer of security.
+
+
+Key Differences:
+
+By combining both types of subnets in a VPC (Virtual Private Cloud), you can create a secure and scalable architecture where public and private resources interact seamlessly.
+
+
+
+----------------------------------
+
+
+Difference between public and private ip?
+
+The difference between a public IP and a private IP lies in their scope of use and accessibility. Here's a detailed explanation:
+
+
+---
+
+Public IP
+
+Definition: A public IP address is globally unique and accessible over the internet.
+
+Range: Allocated by the Internet Assigned Numbers Authority (IANA) and must be unique worldwide. Examples of public IP ranges include addresses not reserved for private use (e.g., 8.8.8.8).
+
+Scope: Used to identify devices or servers on the internet.
+
+Use Cases:
+
+Hosting websites or services accessible from the internet.
+
+Devices or systems that need direct communication with external networks.
+
+
+Key Features:
+
+Can be directly accessed from anywhere on the internet.
+
+Requires proper security (e.g., firewalls) to prevent unauthorized access.
+
+
+
+
+---
+
+Private IP
+
+Definition: A private IP address is used within private networks and is not accessible over the internet.
+
+Range: Defined by the IANA for private use. These ranges are:
+
+10.0.0.0 – 10.255.255.255 (10/8 prefix)
+
+172.16.0.0 – 172.31.255.255 (172.16/12 prefix)
+
+192.168.0.0 – 192.168.255.255 (192.168/16 prefix)
+
+
+Scope: Used for communication between devices within a local network (LAN).
+
+Use Cases:
+
+Assigning IP addresses to devices in a home, office, or cloud network.
+
+Ensures that multiple devices can coexist on the same private network without conflict.
+
+
+Key Features:
+
+Not routable over the internet without NAT (Network Address Translation).
+
+Adds a layer of security by isolating internal network traffic.
+
+
+
+
+---
+
+Key Differences:
+
+By using public and private IPs together with NAT and firewalls, organizations can design secure, efficient, and scalable network architectures.
+
